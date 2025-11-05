@@ -34,7 +34,7 @@
         .scrollable-content {
             flex: 1;
             overflow-y: auto;
-            height: 1600px;
+            max-height: 1600px;
         }
         
         .header {
@@ -259,6 +259,24 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
+
+        .pdf-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+
+        .pdf-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
         
         @media print {
             .nav-buttons, .print-button {
@@ -276,19 +294,18 @@
             <h1>📚 Teacher's Guide: Lesson 3.4</h1>
             <div class="lesson-meta">
                 <strong>Why Writing Still Matters</strong><br>
-                Chapter 3: Prompt Engineering | Discussion Day | Duration: 50 minutes
+                Chapter 3: Prompt Engineering | Discussion Day | Duration: 50 minutes (flexible)
             </div>
         </div>
         
         <div class="nav-buttons">
-            <button class="nav-button" onclick="location.href='#overview'">Overview</button>
-            <button class="nav-button" onclick="location.href='#objectives'">Objectives</button>
-            <button class="nav-button" onclick="location.href='#preparation'">Preparation</button>
-            <button class="nav-button" onclick="location.href='#lesson-flow'">Lesson Flow</button>
-            <button class="nav-button" onclick="location.href='#activities'">Activity Details</button>
-            <button class="nav-button" onclick="location.href='#synthesis'">Teacher Synthesis</button>
-            <button class="nav-button" onclick="location.href='#facilitation'">Facilitation Tips</button>
-            <button class="nav-button" onclick="location.href='#assessment'">Assessment</button>
+            <button class="nav-button" onclick="scrollToSection('overview')">Overview</button>
+            <button class="nav-button" onclick="scrollToSection('objectives')">Objectives</button>
+            <button class="nav-button" onclick="scrollToSection('preparation')">Preparation</button>
+            <button class="nav-button" onclick="scrollToSection('flexibility')">Flexible Structure</button>
+            <button class="nav-button" onclick="scrollToSection('activities')">Activity Details</button>
+            <button class="nav-button" onclick="scrollToSection('synthesis')">Teacher Synthesis</button>
+            <button class="nav-button" onclick="scrollToSection('assessment')">Assessment</button>
         </div>
         
         <div class="scrollable-content">
@@ -315,24 +332,6 @@
                         <li>Editorial judgment works on AI output AND your own writing</li>
                         <li>Future careers require both writing AND AI whispering skills</li>
                     </ul>
-                    
-                    <div class="success-box">
-                        <h4>✅ What Students Already Know:</h4>
-                        <ul>
-                            <li>Four prompt structures and iteration cycles (Lesson 3.2)</li>
-                            <li>Strategic context decisions (Lesson 3.3)</li>
-                            <li>Personal expertise helps them recognize generic vs. specific output (Lesson 3.3)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tip-box">
-                        <h4>🔮 What This Lesson Prepares Students For:</h4>
-                        <ul>
-                            <li><strong>Lesson 3.5:</strong> Recognizing Good Output—applying editorial judgment in practice</li>
-                            <li><strong>Lesson 3.6:</strong> Creative project work where they direct AI using editorial skills</li>
-                            <li><strong>All future work:</strong> Understanding that writing and AI skills grow together, not compete</li>
-                        </ul>
-                    </div>
                 </section>
                 
                 <!-- OBJECTIVES SECTION -->
@@ -348,18 +347,6 @@
                             <li><strong>Articulate</strong> how writing skills translate to editorial judgment when working with AI</li>
                             <li><strong>Recognize</strong> that editorial skills can improve your own writing through self-application</li>
                             <li><strong>Understand</strong> why writing skills are more valuable, not less, in an AI-integrated world</li>
-                            <li><strong>Apply</strong> these insights to their creative writing project and future career thinking</li>
-                        </ul>
-                    </div>
-                    
-                    <h3>Mastery Point Alignment</h3>
-                    
-                    <div class="highlight-box">
-                        <p>This lesson primarily addresses <strong>Mastery Point 2: Prompt Engineering Fundamentals</strong> and introduces concepts that will be assessed in <strong>Mastery Point 3: Strategic AI Collaboration</strong></p>
-                        <ul>
-                            <li><strong>Level 2:</strong> Understands that writing skills help evaluate AI output quality</li>
-                            <li><strong>Level 3:</strong> Can articulate how understanding craft enables editorial direction</li>
-                            <li><strong>Level 4:</strong> Recognizes the feedback loop where editorial and writing skills reinforce each other</li>
                         </ul>
                     </div>
                 </section>
@@ -368,168 +355,129 @@
                 <section id="preparation" class="section">
                     <h2>📋 Teacher Preparation</h2>
                     
-                    <h3>Materials Needed</h3>
+                    <h3>Essential Materials</h3>
                     
                     <div class="objectives-list">
                         <ul>
-                            <li><strong>For Think-Pair-Share:</strong> Assign one scenario to each team (8 scenarios provided in student lesson)</li>
-                            <li><strong>For Snowball:</strong> Prepare 10 teacher-written questions on paper, crumpled (see detailed list below)</li>
-                            <li><strong>For Muddiest Points:</strong> Blank paper for students, collection method</li>
-                            <li><strong>For all activities:</strong> Whiteboard or chart paper for capturing insights</li>
+                            <li><strong>Activity 1 (Think-Pair-Share):</strong> Student-facing lesson contains 8 scenarios</li>
+                            <li><strong>Activity 2 (Script Transcript):</strong> Print and distribute the Script Development Transcript PDF <a href="https://conceptualacademy.com/sites/default/files/2025-11/ScriptTranscript.pdf" class="pdf-link" target="_blank">📄 Download Script Transcript PDF</a></li>
+                            <li><strong>Activity 3 (Snowball):</strong> Paper for students to write questions</li>
+                            <li><strong>Activity 4 (Muddiest Points):</strong> Blank paper for students, collection method</li>
                         </ul>
                     </div>
-                    
-                    <h3>Before Class: Prepare Your 10 Snowball Questions</h3>
-                    
-                    <div class="warning-box">
-                        <h4>⚠️ Critical Preparation: The Stealth Snowballs</h4>
-                        <p>Write these 10 questions on the same paper students will use. Crumple them. Keep them in your pocket or desk. During the snowball activity, casually toss them into the chaos—students won't notice you're contributing questions. This ensures key concepts get addressed even if student questions miss them.</p>
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>1.</strong> Can someone who never learned to write recognize good writing? Can they make it BETTER? What's the difference?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>2.</strong> Why do film directors need to understand cinematography even though they don't operate the camera themselves?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>3.</strong> If you can't write well yourself, can you effectively tell AI what to write for you? Why or why not?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>4.</strong> What's harder: writing a paragraph yourself, or evaluating whether someone else's paragraph is good and knowing specifically how to improve it?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>5.</strong> A manager reviews two reports—one AI-generated, one human-written. How does the manager know which is better if they don't understand good writing?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>6.</strong> Does learning to cook make you better at choosing restaurants? How is learning to write similar?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>7.</strong> Why does editing require different skills than writing from scratch? Can someone be a good editor without being a good writer?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>8.</strong> If AI can write, what human skill becomes MORE valuable, not less?
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>9.</strong> Can you direct someone to do something you don't understand yourself? Give an example.
-                    </div>
-                    
-                    <div class="question-box">
-                        <strong>10.</strong> If you develop editorial skills by directing AI, can you use those same skills to improve YOUR OWN writing? How would that work?
-                    </div>
-                    
-                    <div class="tip-box">
-                        <h4>💡 Why Question #10 is Critical</h4>
-                        <p>This question introduces the feedback loop that's the capstone of the lesson: Editorial judgment developed through AI work transfers back to self-editing. Make sure this question gets discussed, either during Snowball or in your Teacher Synthesis.</p>
-                    </div>
-                    
-                    <h3>Optional: Scenario Cards</h3>
-                    
-                    <div class="success-box">
-                        <p>While the 8 scenarios are embedded in the student-facing lesson, some teachers prefer physical cards for the Think-Pair-Share activity. If you'd like to create scenario cards:</p>
+
+                    <div class="highlight-box">
+                        <h4>📄 About the Script Transcript</h4>
+                        <p>The Script Development Transcript shows a real conversation between a teacher and Claude developing a video script for this curriculum. Students will see six rounds of human-AI collaboration where the human provides editorial direction based on:</p>
                         <ul>
-                            <li>Print each scenario on a card</li>
-                            <li>Distribute one card per team</li>
-                            <li>Teams read from the card rather than the screen</li>
+                            <li>Domain knowledge (catching math errors)</li>
+                            <li>Pedagogical understanding (anticipating student misconceptions)</li>
+                            <li>Strategic thinking (balancing content goals with time constraints)</li>
+                            <li>Editorial judgment (making trade-offs between length and value)</li>
                         </ul>
-                        <p>This is optional—the platform-based version works equally well.</p>
+                        <p><strong>Download and print this PDF before class:</strong> <a href="https://conceptualacademy.com/sites/default/files/2025-11/ScriptTranscript.pdf" target="_blank">conceptualacademy.com/sites/default/files/2025-11/ScriptTranscript.pdf</a></p>
                     </div>
                 </section>
-                
-                <!-- LESSON FLOW SECTION -->
-                <section id="lesson-flow" class="section">
-                    <h2>⏱️ Lesson Flow & Timeline</h2>
-                    
+
+                <!-- FLEXIBILITY SECTION -->
+                <section id="flexibility" class="section">
+                    <h2>🔄 Flexible Activity Structure</h2>
+
+                    <div class="warning-box">
+                        <h4>⚠️ IMPORTANT: You Don't Need to Do All Four Activities</h4>
+                        <p><strong>This lesson includes FOUR activities, but different teams can work on different activities based on your time constraints and teaching goals.</strong></p>
+                        <p>Think of these activities as a menu of options rather than a required sequence. Choose the combination that works best for your class period and your students' needs.</p>
+                    </div>
+
+                    <h3>Activity Selection Guide</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Core Learning Goal</th>
+                                <th>Time Required</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Activity 1:<br>Eight Scenarios</strong></td>
+                                <td>Discovering the pattern across different domains that understanding enables improvement</td>
+                                <td>25 minutes</td>
+                                <td>Students who benefit from seeing the principle in multiple contexts before applying to writing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Activity 2:<br>Script Transcript</strong></td>
+                                <td>Seeing real editorial judgment in action through concrete example</td>
+                                <td>20 minutes</td>
+                                <td>Students who learn best from concrete examples; shows the iterative nature of AI collaboration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Activity 3:<br>Snowball</strong></td>
+                                <td>Exploring implications and making connections through student-generated questions</td>
+                                <td>15 minutes</td>
+                                <td>Classes that benefit from student-driven discussion; helps surface misconceptions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Activity 4:<br>Muddiest Points</strong></td>
+                                <td>Identifying and addressing remaining confusions</td>
+                                <td>5 minutes</td>
+                                <td>Quick formative assessment; use to inform tomorrow's instruction</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Suggested Combinations</h3>
+
                     <div class="timeline">
-                        <h3>Suggested 50-Minute Structure</h3>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:00-0:03<br>(3 min)</div>
-                            <div class="timeline-content">
-                                <strong>Opening: Frame the Question</strong>
-                                <ul>
-                                    <li>Acknowledge the elephant in the room: "If AI can write, why learn writing?"</li>
-                                    <li>Today we explore this through concrete examples</li>
-                                    <li>No preview of the answer—let them discover it</li>
-                                </ul>
-                            </div>
+                        <h4>For 40-45 Minute Periods (Choose ONE Primary + Synthesis):</h4>
+                        <div class="objectives-list">
+                            <ul>
+                                <li><strong>Option A:</strong> Activity 1 (Eight Scenarios) + Teacher Synthesis + Field Journal</li>
+                                <li><strong>Option B:</strong> Activity 2 (Script Transcript) + Activity 4 (Muddiest Points) + Teacher Synthesis</li>
+                                <li><strong>Option C:</strong> Activity 1 (Eight Scenarios - abbreviated) + Activity 3 (Snowball) + Synthesis</li>
+                            </ul>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:03-0:28<br>(25 min)</div>
-                            <div class="timeline-content">
-                                <strong>Activity 1: Think-Pair-Share (8 Scenarios)</strong>
-                                <ul>
-                                    <li><strong>Setup (2 min):</strong> Assign one scenario per team</li>
-                                    <li><strong>Think (3 min):</strong> Individual reflection on scenario</li>
-                                    <li><strong>Team Discussion (7 min):</strong> Teams discuss and prepare to share</li>
-                                    <li><strong>Whole Class Sharing (10 min):</strong> Each team shares (1-2 min each)</li>
-                                    <li><strong>Pattern Recognition (3 min):</strong> What do all scenarios reveal?</li>
-                                </ul>
-                            </div>
+
+                        <h4>For 50-55 Minute Periods (Choose TWO + Synthesis):</h4>
+                        <div class="objectives-list">
+                            <ul>
+                                <li><strong>Option A:</strong> Activity 1 + Activity 2 + Synthesis (RECOMMENDED)</li>
+                                <li><strong>Option B:</strong> Activity 1 + Activity 3 + Synthesis + Muddiest Points</li>
+                                <li><strong>Option C:</strong> Activity 2 + Activity 3 + Synthesis</li>
+                            </ul>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:28-0:33<br>(5 min)</div>
-                            <div class="timeline-content">
-                                <strong>Connect to Writing</strong>
-                                <ul>
-                                    <li>Apply the pattern to writing and AI</li>
-                                    <li>Level 1 (Appreciation) vs. Level 2 (Editorial Direction)</li>
-                                    <li>Writing skills = editorial judgment</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:33-0:48<br>(15 min)</div>
-                            <div class="timeline-content">
-                                <strong>Activity 2: Snowball</strong>
-                                <ul>
-                                    <li><strong>Setup (2 min):</strong> Students write questions, crumple them</li>
-                                    <li><strong>Snowstorm (2 min):</strong> Throw! (You secretly add your 10)</li>
-                                    <li><strong>Team Discussion (7 min):</strong> Teams discuss caught questions</li>
-                                    <li><strong>Whole Class (4 min):</strong> Share interesting questions, facilitate discussion</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:48-0:53<br>(5 min)</div>
-                            <div class="timeline-content">
-                                <strong>Activity 3: Muddiest Points</strong>
-                                <ul>
-                                    <li><strong>Write (2 min):</strong> Students note what's still confusing</li>
-                                    <li><strong>Collect & Address (3 min):</strong> Quickly scan and address common confusions</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-time">0:53-0:58<br>(5 min)</div>
-                            <div class="timeline-content">
-                                <strong>Teacher Synthesis & Field Journal</strong>
-                                <ul>
-                                    <li>Deliver the capstone insight about the feedback loop</li>
-                                    <li>Synthesize key takeaways</li>
-                                    <li>Assign field journal reflection</li>
-                                </ul>
-                            </div>
+
+                        <h4>For 60+ Minute Periods (Do THREE or ALL FOUR):</h4>
+                        <div class="objectives-list">
+                            <ul>
+                                <li><strong>Full Experience:</strong> Activities 1 → 2 → 3 → 4 → Synthesis</li>
+                                <li><strong>Deep Dive:</strong> Activities 1 & 2 with extended discussion + Activity 4 + Synthesis</li>
+                            </ul>
                         </div>
                     </div>
-                    
+
                     <div class="tip-box">
-                        <h4>⏰ Timing Flexibility</h4>
-                        <p><strong>For 40-45 minute periods:</strong> Reduce Think-Pair-Share sharing time (each team gets 1 minute max). Reduce Snowball team discussion to 5 minutes. Still protect the Teacher Synthesis—that's where the capstone insight lands.</p>
-                        <p><strong>For 60+ minute periods:</strong> Extend Think-Pair-Share whole class discussion (deeper exploration of each scenario). Add more time for Snowball whole class sharing (explore more questions). Extend field journal reflection to include pair sharing.</p>
+                        <h4>💡 Assigning Different Activities to Different Teams</h4>
+                        <p>For maximum flexibility, you can have different teams working on different activities simultaneously:</p>
+                        <ul>
+                            <li><strong>Teams 1-4:</strong> Work on Activity 1 (Eight Scenarios)</li>
+                            <li><strong>Teams 5-8:</strong> Work on Activity 2 (Script Transcript)</li>
+                            <li><strong>Whole Class:</strong> Come together for synthesis discussion</li>
+                        </ul>
+                        <p>This approach works well when you want to expose students to multiple perspectives without requiring everyone to do everything.</p>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>✅ What MUST Happen Regardless of Activities Chosen</h4>
+                        <p>No matter which activities you select:</p>
+                        <ul>
+                            <li><strong>Students must grasp:</strong> Level 1 (Appreciation) vs. Level 2 (Editorial Direction)</li>
+                            <li><strong>Teacher Synthesis must happen:</strong> The feedback loop insight is the capstone</li>
+                            <li><strong>Field Journal assignment:</strong> Students reflect on how their understanding changed</li>
+                        </ul>
+                        <p>The activities are different paths to the same destination. Choose the path(s) that work for your students.</p>
                     </div>
                 </section>
                 
@@ -537,15 +485,17 @@
                 <section id="activities" class="section">
                     <h2>📝 Activity Details & Facilitation</h2>
                     
-                    <h3>Activity 1: Think-Pair-Share (25 minutes)</h3>
+                    <h3>Activity 1: Think-Pair-Share - Eight Scenarios (25 minutes)</h3>
                     
+                    <h4>Purpose</h4>
+                    <p>Students discover the pattern that understanding a craft enables improvement across eight different domains (music, film, cooking, sports, design, dance, speaking, apps). This builds the foundation before applying the principle to writing.</p>
+
                     <h4>Setup (2 minutes)</h4>
                     
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SCRIPT</div>
                         <p>"Today we're exploring a question many of you are probably asking: If AI can write well, what's the point of learning writing skills? We're going to approach this through concrete examples rather than abstract discussion."</p>
                         <p>"Each team is getting one scenario. Your job is to think about what this scenario reveals about the difference between enjoying something and being able to improve it."</p>
-                        <p>[Assign scenarios—you can do this via the platform or by calling out team assignments]</p>
                     </div>
                     
                     <h4>Individual Think Time (3 minutes)</h4>
@@ -557,11 +507,6 @@
                             <li>Considering: Can someone enjoy this without being able to improve it?</li>
                             <li>Thinking about what expertise would add</li>
                         </ul>
-                    </div>
-                    
-                    <div class="tip-box">
-                        <h4>💡 Circulate During Think Time</h4>
-                        <p>Use this time to ensure all teams understand their scenario. If a team looks confused, check in: "What's your scenario asking you to think about?" This prevents wasted discussion time.</p>
                     </div>
                     
                     <h4>Team Discussion (7 minutes)</h4>
@@ -579,65 +524,105 @@
                     
                     <div class="warning-box">
                         <h4>⚠️ Keep This Moving</h4>
-                        <p>8 teams × 1-2 minutes each = 8-16 minutes. Stay on the shorter end (1 minute per team) to prevent dragging. Teams should share:</p>
+                        <p>8 teams × 1 minute each = 8 minutes. Teams should share:</p>
                         <ul>
                             <li>Brief summary of their scenario (15-20 seconds)</li>
                             <li>Key insight they discovered (30-40 seconds)</li>
                         </ul>
-                        <p>You can say: "Give us the 30-second version—what's your scenario and what's the key insight?"</p>
                     </div>
                     
                     <h4>Pattern Recognition (3 minutes)</h4>
                     
                     <div class="script-box">
                         <div class="script-label">SUGGESTED TRANSITION</div>
-                        <p>"You've just heard 8 different scenarios—music, film, cooking, sports, design, dance, speaking, apps. What pattern did you notice? What did they ALL have in common?"</p>
-                        <p>[Students respond]</p>
-                        <p>"Exactly. In every case, there's a difference between Level 1—appreciation, saying 'I like this' or 'something's off'—and Level 2—editorial direction, being able to diagnose exactly what's wrong and how to fix it."</p>
-                        <p>"Understanding the craft doesn't just help you DO the craft. It helps you EVALUATE and IMPROVE the craft, whether you're doing it yourself or directing someone else."</p>
+                        <p>"You've just heard 8 different scenarios. What pattern did you notice? What did they ALL have in common?"</p>
+                        <p>"Exactly. In every case, there's a difference between Level 1—appreciation—and Level 2—editorial direction, being able to diagnose exactly what's wrong and how to fix it."</p>
                     </div>
-                    
-                    <h3>Connecting to Writing (5 minutes)</h3>
-                    
+
+                    <h3>Activity 2: Script Development Transcript (20 minutes)</h3>
+
+                    <h4>Purpose</h4>
+                    <p>Students see a REAL example of human-AI collaboration where editorial judgment makes the difference. The transcript shows six rounds of refinement, demonstrating that good output requires human direction based on domain knowledge, pedagogical thinking, and editorial expertise.</p>
+
+                    <div class="highlight-box">
+                        <h4>📄 Materials Required</h4>
+                        <p>Print and distribute the Script Transcript PDF: <a href="https://conceptualacademy.com/sites/default/files/2025-11/ScriptTranscript.pdf" target="_blank">Download here</a></p>
+                        <p>Each team needs one copy of the 3-page transcript.</p>
+                    </div>
+
+                    <h4>Setup (2 minutes)</h4>
+
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SCRIPT</div>
-                        <p>"Now let's apply this to writing and AI. Think about your work with Alia on your creative project."</p>
-                        <p>"Level 1 reactions might be: 'This paragraph sounds boring.' 'This is better than the last version.' 'I like this one more.'"</p>
-                        <p>"Level 2 editorial direction sounds like: 'This paragraph is boring because all the sentences are the same length and there are no concrete examples. Make it more engaging by varying sentence structure—combine some short sentences with longer ones—and add a specific story in the second paragraph about someone who actually experienced this problem.'"</p>
-                        <p>"See the difference? Level 1 helps you choose between options. Level 2 lets you tell AI exactly how to make something better."</p>
-                        <p>"Writing skills enable Level 2. The better you understand what makes writing work—sentence structure, concrete details, paragraph flow, voice, clarity—the better you can give AI specific, targeted direction."</p>
-                        <p>"<strong>Writing skills equal editorial judgment.</strong> You can't whisper effectively if you can't recognize and diagnose good output."</p>
+                        <p>"Now we're going to look at a real conversation—not a made-up example, but an actual conversation between a teacher and AI developing a video script for this course."</p>
+                        <p>"This transcript shows six rounds of collaboration. In each round, the human provides specific editorial direction based on expertise. Your job is to analyze what made that direction possible."</p>
+                    </div>
+
+                    <h4>Team Analysis (12 minutes)</h4>
+
+                    <div class="objectives-list">
+                        <p><strong>Analysis Framework (written on board or displayed):</strong></p>
+                        <p>For each round, identify:</p>
+                        <ul>
+                            <li><strong>Problem/Gap:</strong> What specific issue did the human spot?</li>
+                            <li><strong>Direction Given:</strong> What concrete instruction did they provide?</li>
+                            <li><strong>Required Knowledge:</strong> What expertise enabled this direction?</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4>💡 Circulate and Guide</h4>
+                        <p>Key questions to ask teams:</p>
+                        <ul>
+                            <li>"In Round 2, how did the human catch the math error? What knowledge was required?"</li>
+                            <li>"In Round 4, why did adding conceptual bridges matter? Could AI have known to do this?"</li>
+                            <li>"In Round 5, the human anticipated student misconceptions. Is that something AI can do on its own?"</li>
+                            <li>"Notice Round 6—the human makes a judgment call about length vs. value. What makes someone qualified to make that decision?"</li>
+                        </ul>
+                    </div>
+
+                    <h4>Whole Class Discussion (6 minutes)</h4>
+
+                    <div class="script-box">
+                        <div class="script-label">KEY DISCUSSION QUESTIONS</div>
+                        <ul>
+                            <li>"Which round best shows why editorial expertise matters? Why?"</li>
+                            <li>"What kinds of knowledge did the human bring that AI didn't have?"</li>
+                            <li>"Could someone without writing/teaching knowledge have given this kind of direction?"</li>
+                            <li>"How does this connect to what we learned from the Eight Scenarios?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>✅ Key Takeaway from Activity 2</h4>
+                        <p>Students should see that editorial direction requires:</p>
+                        <ul>
+                            <li>Domain expertise (knowing about the subject)</li>
+                            <li>Technical knowledge (understanding word counts, timing, structure)</li>
+                            <li>Audience awareness (anticipating what students will think)</li>
+                            <li>Strategic thinking (balancing competing goals)</li>
+                        </ul>
+                        <p>All of these come from human understanding—not just "liking" something.</p>
                     </div>
                     
-                    <h3>Activity 2: Snowball (15 minutes)</h3>
+                    <h3>Activity 3: Snowball (15 minutes)</h3>
                     
+                    <h4>Purpose</h4>
+                    <p>Students generate and explore their own questions about writing, AI, and editorial judgment. This activity surfaces their remaining questions and helps them make personal connections to the concepts.</p>
+
                     <h4>Setup (2 minutes)</h4>
                     
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SCRIPT</div>
-                        <p>"Now we're going to explore the implications of this insight through a Snowball activity. Here's how it works:"</p>
-                        <p>"Everyone take out a piece of paper. Write ONE thought-provoking question about writing, AI, editorial judgment, or future skills. Make it a question that needs explanation, not just yes/no."</p>
-                        <p>"When you're done, crumple your paper into a snowball."</p>
-                        <p>[Give students 2 minutes to write]</p>
-                    </div>
-                    
-                    <div class="tip-box">
-                        <h4>💡 During Student Writing Time</h4>
-                        <p>While students write their questions, unobtrusively crumple YOUR 10 prepared questions. Keep them ready in your hand or pocket.</p>
+                        <p>"Write ONE thought-provoking question about writing, AI, editorial judgment, or future skills. Make it a question that needs explanation, not just yes/no. When you're done, crumple your paper into a snowball."</p>
                     </div>
                     
                     <h4>The Snowstorm (2 minutes)</h4>
                     
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SCRIPT</div>
-                        <p>"Alright, everyone stand up with your snowball. On my mark, throw your snowball randomly into the room. Ready? THROW!"</p>
-                        <p>[Chaos! Students throw, you casually toss your 10 into the mix]</p>
+                        <p>"Everyone stand up with your snowball. On my mark, throw your snowball randomly into the room. Ready? THROW!"</p>
                         <p>"Now everyone pick up ONE snowball—not your own if you can help it—and return to your seat."</p>
-                    </div>
-                    
-                    <div class="warning-box">
-                        <h4>⚠️ The Stealth Move</h4>
-                        <p>During the chaos of throwing, casually toss your 10 teacher-written snowballs into different areas of the room. Students won't notice you're throwing too—they're focused on their own snowballs and the general mayhem. This is the beauty of the hybrid approach!</p>
                     </div>
                     
                     <h4>Team Discussion (7 minutes)</h4>
@@ -652,64 +637,38 @@
                         </ul>
                     </div>
                     
-                    <div class="tip-box">
-                        <h4>💡 Circulate and Listen</h4>
-                        <p>As you move between teams:</p>
-                        <ul>
-                            <li>Listen for which questions are being discussed</li>
-                            <li>Note teams with especially rich discussions</li>
-                            <li>Identify if any of YOUR questions are being discussed (particularly #10 about the feedback loop)</li>
-                            <li>Gently guide teams that are off-track</li>
-                        </ul>
-                    </div>
-                    
                     <h4>Whole Class Sharing (4 minutes)</h4>
                     
                     <div class="script-box">
-                        <div class="script-label">SUGGESTED FACILITATION</div>
-                        <p>"Who caught an interesting question? What does it ask?"</p>
-                        <p>[Student shares question]</p>
-                        <p>"What did your team think? How would you answer it?"</p>
-                        <p>[Student responds, you facilitate brief discussion]</p>
-                        <p>"Anyone else have thoughts on that?"</p>
-                        <p>[Brief exchange, then move to next question]</p>
-                    </div>
-                    
-                    <div class="success-box">
-                        <h4>✅ Strategic Question Selection</h4>
-                        <p>If Question #10 (the feedback loop question) hasn't come up naturally, make sure to call on a team that has it: "I want to hear from [Team Name]—what question did you catch?"</p>
-                        <p>This ensures the capstone insight gets aired during the activity, setting up your Teacher Synthesis.</p>
-                    </div>
-                    
-                    <h3>Activity 3: Muddiest Points (5 minutes)</h3>
-                    
-                    <h4>Setup</h4>
-                    
-                    <div class="script-box">
-                        <div class="script-label">SUGGESTED SCRIPT</div>
-                        <p>"Before we synthesize everything, I want to make sure we address any confusion. On a piece of paper—no name required—write down what's still unclear or confusing about the relationship between writing skills and working with AI."</p>
-                        <p>"What questions do you still have? What doesn't quite make sense?"</p>
-                        <p>[Give students 2 minutes to write, then collect papers]</p>
-                    </div>
-                    
-                    <h4>Quick Scan & Address (3 minutes)</h4>
-                    
-                    <div class="objectives-list">
-                        <p><strong>What to do:</strong></p>
+                        <div class="script-label">FACILITATION APPROACH</div>
+                        <p>Call on 3-4 teams to share interesting questions and their team's thinking. Focus on questions that:</p>
                         <ul>
-                            <li>Quickly skim the muddiest points papers</li>
-                            <li>Identify the most common confusion themes</li>
-                            <li>Address 2-3 of the most common issues briefly</li>
-                            <li>If a confusion is complex, acknowledge it: "Great question—let's explore that more as we work in the next few labs"</li>
+                            <li>Reveal misconceptions worth addressing</li>
+                            <li>Connect to the feedback loop concept</li>
+                            <li>Show deeper thinking about the concepts</li>
                         </ul>
                     </div>
                     
+                    <h3>Activity 4: Muddiest Points (5 minutes)</h3>
+                    
+                    <h4>Purpose</h4>
+                    <p>Quick formative assessment to identify remaining confusions before the synthesis.</p>
+
+                    <h4>Process</h4>
+                    
+                    <div class="script-box">
+                        <div class="script-label">SUGGESTED SCRIPT</div>
+                        <p>"On a piece of paper—no name required—write down what's still unclear or confusing about the relationship between writing skills and working with AI. What questions do you still have?"</p>
+                        <p>[Give students 2 minutes to write, then collect papers]</p>
+                        <p>[Quickly skim and address 2-3 most common confusions in 3 minutes]</p>
+                    </div>
+
                     <div class="tip-box">
                         <h4>💡 Common Confusions You Might See</h4>
                         <ul>
-                            <li><strong>"But I still don't like writing!"</strong> → Response: "That's okay. The point isn't that you'll love writing. The point is that understanding writing helps you work better with AI, even if you prefer having AI do the actual writing."</li>
-                            <li><strong>"Do I need to be a great writer to use AI well?"</strong> → Response: "No, but you need enough understanding to recognize quality and give direction. That's different from being a novelist."</li>
-                            <li><strong>"Won't AI eventually not need our direction?"</strong> → Response: "Maybe someday. But even then, you'll need editorial judgment to decide what to use. Someone still has to choose."</li>
+                            <li><strong>"But I still don't like writing!"</strong> → "That's okay. Understanding writing helps you work better with AI, even if you prefer having AI do the actual writing."</li>
+                            <li><strong>"Do I need to be a great writer?"</strong> → "No, but you need enough understanding to recognize quality and give direction."</li>
+                            <li><strong>"Won't AI eventually not need our direction?"</strong> → "Maybe someday. But even then, someone has to choose. That requires judgment."</li>
                         </ul>
                     </div>
                 </section>
@@ -720,7 +679,7 @@
                     
                     <div class="highlight-box">
                         <h4>🔑 This Is Where Everything Comes Together</h4>
-                        <p>The Teacher Synthesis is critical. Students have explored the concepts through activities, but now you deliver the capstone insight: <strong>Editorial skills and writing skills reinforce each other in a feedback loop.</strong></p>
+                        <p>The Teacher Synthesis is critical regardless of which activities you chose. This is where you deliver the capstone insight: <strong>Editorial skills and writing skills reinforce each other in a feedback loop.</strong></p>
                     </div>
                     
                     <h3>The Synthesis Script (5 minutes)</h3>
@@ -728,131 +687,41 @@
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SYNTHESIS SCRIPT</div>
                         <p><strong>[Start with the core recap]</strong></p>
-                        <p>"Let's synthesize what we discovered today. We started with 8 different scenarios—music, film, cooking, sports, design, dance, speaking, apps. Every single one revealed the same pattern: You don't need expertise to enjoy something, but you DO need expertise to improve it."</p>
+                        <p>"Today we discovered that understanding a craft enables you to improve it—whether through the Eight Scenarios, the Script Transcript, or both. You don't need expertise to enjoy something, but you DO need expertise to make it better."</p>
                         
-                        <p>"We applied that to writing and AI: Writing skills equal editorial judgment. The better you understand what makes writing work, the better you can direct AI to produce what you actually want."</p>
+                        <p>"We applied that to writing and AI: Writing skills equal editorial judgment. The better you understand what makes writing work, the better you can direct AI."</p>
                         
                         <p><strong>[Now deliver the capstone insight]</strong></p>
-                        <p>"But here's the most powerful part—and this is what I want you to really understand: <strong>This works both ways.</strong>"</p>
+                        <p>"But here's the most powerful part: <strong>This works both ways.</strong>"</p>
                         
-                        <p>"When you direct AI and develop editorial judgment, those same skills transfer back to your own writing. Think about it: If you can diagnose why AI's paragraph is boring and tell it to vary sentence structure and add concrete details, you can apply that exact same analysis to your own paragraphs."</p>
+                        <p>"When you direct AI and develop editorial judgment, those same skills transfer back to your own writing. If you can diagnose why AI's paragraph is boring and tell it to vary sentence structure, you can apply that exact same analysis to your own paragraphs."</p>
                         
                         <p>"<strong>Editorial skills and writing skills reinforce each other.</strong> It's a feedback loop:"</p>
                         <ul>
-                            <li>"Understanding writing helps you direct AI better"</li>
-                            <li>"Directing AI develops your editorial eye"</li>
-                            <li>"Your editorial eye helps you improve your own writing"</li>
-                            <li>"Improving your own writing deepens your understanding"</li>
+                            <li>"Understanding writing → helps you direct AI better"</li>
+                            <li>"Directing AI → develops your editorial eye"</li>
+                            <li>"Your editorial eye → helps you improve your own writing"</li>
+                            <li>"Improving your own writing → deepens your understanding"</li>
                             <li>"Which helps you direct AI even better"</li>
                         </ul>
                         
-                        <p>"They grow together. Every time you give AI specific direction about what to change and why, you're building skills you can use on your own writing. Every time you write something yourself and revise it, you're building skills you can use to direct AI."</p>
-                        
                         <p><strong>[Connect to their experience]</strong></p>
-                        <p>"Think about your creative writing project. When you tell Alia 'This scene needs more tension,' you're practicing the same skill you'd use to revise your own scene. When you write something yourself and realize 'This feels flat—it needs a concrete sensory detail,' you've just developed editorial judgment you can use with AI."</p>
+                        <p>"Think about your creative writing project. When you tell Alia 'This scene needs more tension,' you're practicing the same skill you'd use to revise your own scene."</p>
                         
                         <p><strong>[Address the career question directly]</strong></p>
-                        <p>"So back to the original question: If AI can write, why learn writing? Because <strong>writing skills aren't just about producing text anymore</strong>. They're about:</p>
-                        <ul>
-                            <li>"Recognizing quality"</li>
-                            <li>"Diagnosing problems"</li>
-                            <li>"Giving specific direction"</li>
-                            <li>"Making editorial decisions"</li>
-                            <li>"Maintaining creative vision"</li>
-                        </ul>
+                        <p>"So: If AI can write, why learn writing? Because <strong>writing skills aren't just about producing text anymore</strong>. They're about recognizing quality, diagnosing problems, giving specific direction, making editorial decisions, and maintaining creative vision."</p>
                         
-                        <p>"Future employers won't ask: 'Can you write?' or 'Can you use AI?' They'll look for people who can do BOTH—people who can direct AI to produce excellent work AND apply editorial judgment to make it even better AND recognize when writing something yourself is more effective than using AI."</p>
+                        <p>"Future employers will look for people who can do BOTH—direct AI to produce excellent work AND apply editorial judgment to make it even better."</p>
                         
                         <p><strong>[Close with empowerment]</strong></p>
-                        <p>"Writing skills aren't obsolete. They're more valuable than ever—just valuable in a different way. You're not competing with AI. You're learning to collaborate with it. And every skill you build in one area strengthens your ability in the other."</p>
-                        
-                        <p>"Keep developing both. They're not separate paths—they're the same path."</p>
+                        <p>"Writing skills aren't obsolete. They're more valuable than ever—just valuable in a different way. Keep developing both. They're not separate paths—they're the same path."</p>
                     </div>
                     
                     <h3>Field Journal Assignment</h3>
                     
                     <div class="script-box">
                         <div class="script-label">SUGGESTED SCRIPT</div>
-                        <p>"For your field journal reflection today, think about how your understanding has changed. Before this lesson, you might have thought 'AI can write, so why learn writing?' Now what do you think?"</p>
-                        <p>"Consider: Which scenario from today resonated most with you? How does understanding writing help you direct AI in your creative project? What's one aspect of writing you want to strengthen specifically to improve your editorial judgment?"</p>
-                        <p>"And here's the big one: Can you see how editorial skills you develop by directing AI could improve your own writing? Give a specific example."</p>
-                    </div>
-                </section>
-                
-                <!-- FACILITATION SECTION -->
-                <section id="facilitation" class="section">
-                    <h2>💡 Facilitation Tips & Troubleshooting</h2>
-                    
-                    <h3>Managing Student Resistance</h3>
-                    
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Student Pushback</th>
-                                <th>What They're Really Saying</th>
-                                <th>Your Response</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>"I still don't like writing"</strong></td>
-                                <td>"This feels like you're trying to make me enjoy something I don't enjoy"</td>
-                                <td>"That's totally fine. You don't have to love writing. But understanding how it works helps you work better with AI—even if AI does the actual writing. It's like understanding how cars work even if you're not a mechanic."</td>
-                            </tr>
-                            <tr>
-                                <td><strong>"AI will get so good we won't need to understand anything"</strong></td>
-                                <td>"Technology will solve this problem entirely"</td>
-                                <td>"Maybe someday. But even if AI becomes perfect at generating options, someone still has to choose between them. That requires judgment. And judgment comes from understanding."</td>
-                            </tr>
-                            <tr>
-                                <td><strong>"But I'm bad at writing so this won't help me"</strong></td>
-                                <td>"I'm worried I can't develop these skills"</td>
-                                <td>"You don't need to be Shakespeare. You need enough understanding to recognize quality and give direction. That's learnable, and you're already doing it when you say 'this sounds better than that.' We're just making that instinct more specific."</td>
-                            </tr>
-                            <tr>
-                                <td><strong>"This sounds like more work"</strong></td>
-                                <td>"I thought AI was supposed to make things easier"</td>
-                                <td>"AI DOES make things easier—but it doesn't eliminate the need for judgment. Think about Google Maps: It makes navigation easier, but you still need to know where you want to go. AI makes writing easier, but you need to direct it toward what you actually want."</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <h3>If Think-Pair-Share Falls Flat</h3>
-                    
-                    <div class="warning-box">
-                        <h4>⚠️ Scenarios Not Landing?</h4>
-                        <p>If teams struggle to extract insights from their scenarios:</p>
-                        <ul>
-                            <li><strong>Add a concrete example:</strong> "Let's say I love pizza. Can I walk into a pizza kitchen and tell the chef exactly what temperature to bake it at and what ratio of sauce to cheese? No—I need cooking knowledge for that."</li>
-                            <li><strong>Make it personal:</strong> "Has anyone here ever tried to teach someone something you're good at? Sports move? Game strategy? Cooking technique? What made it hard if the other person didn't understand the basics?"</li>
-                            <li><strong>Use contrast:</strong> "What's the difference between 'This song is good' and 'The chorus is good but the bridge is too long and the key change is jarring—cut the bridge by half and move the key change earlier'?"</li>
-                        </ul>
-                    </div>
-                    
-                    <h3>If Snowball Gets Chaotic</h3>
-                    
-                    <div class="tip-box">
-                        <h4>💡 Managing the Snowstorm</h4>
-                        <p>The throwing part is inherently chaotic—that's part of the fun! But if it becomes too unruly:</p>
-                        <ul>
-                            <li><strong>Set boundaries:</strong> "Throw across the room, not AT people"</li>
-                            <li><strong>Time-box it:</strong> "You have 10 seconds to throw and pick up a snowball"</li>
-                            <li><strong>Have a signal:</strong> "When I say FREEZE, everyone stops and sits down with the snowball they're holding"</li>
-                        </ul>
-                        <p>If a student didn't get a snowball, have extras (a few of your teacher questions) they can grab.</p>
-                    </div>
-                    
-                    <h3>Ensuring the Feedback Loop Insight Lands</h3>
-                    
-                    <div class="success-box">
-                        <h4>✅ Making the Capstone Stick</h4>
-                        <p>The feedback loop (editorial skills → writing skills → editorial skills) is the most important takeaway. Ensure it lands by:</p>
-                        <ul>
-                            <li><strong>Using gestures:</strong> Draw a circle in the air as you describe the feedback loop</li>
-                            <li><strong>Drawing on board:</strong> Write "Writing Skills ↔ Editorial Judgment" with arrows going both ways</li>
-                            <li><strong>Using their project:</strong> "When you told Alia yesterday to add more sensory details, that's a skill you can now use on your own writing"</li>
-                            <li><strong>Asking for examples:</strong> "Can someone give me an example of how directing AI taught them something about their own writing?"</li>
-                        </ul>
+                        <p>"For your field journal reflection, think about how your understanding changed today. Consider: Which activity or insight resonated most? How does understanding writing help you direct AI? What's one writing skill you want to strengthen specifically to improve your editorial judgment? And can you see how editorial skills you develop by directing AI could improve your own writing?"</p>
                     </div>
                 </section>
                 
@@ -867,29 +736,20 @@
                             <tr>
                                 <th>What to Listen For</th>
                                 <th>Evidence of Understanding</th>
-                                <th>What It Tells You</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Scenario discussions</strong></td>
+                                <td><strong>Scenario/Transcript discussions</strong></td>
                                 <td>"You can enjoy X without understanding it, but you can't improve X without understanding it"</td>
-                                <td>Student grasps the core distinction between appreciation and direction</td>
                             </tr>
                             <tr>
                                 <td><strong>Application to writing</strong></td>
-                                <td>Student can articulate specific ways writing knowledge helps them direct AI</td>
-                                <td>Student is connecting abstract principle to their concrete experience</td>
+                                <td>Student articulates specific ways writing knowledge helps them direct AI</td>
                             </tr>
                             <tr>
                                 <td><strong>Feedback loop recognition</strong></td>
                                 <td>"When I figure out how to fix AI's output, I can use that on my own writing"</td>
-                                <td>Student understands the reciprocal relationship—the capstone insight</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Muddiest points</strong></td>
-                                <td>Questions show engagement with nuance rather than rejection of premise</td>
-                                <td>Student is wrestling with ideas genuinely, moving beyond surface resistance</td>
                             </tr>
                         </tbody>
                     </table>
@@ -897,126 +757,14 @@
                     <h3>Field Journal Assessment</h3>
                     
                     <div class="highlight-box">
-                        <h4>📝 What to Look For in Field Journals</h4>
-                        
+                        <h4>📝 What to Look For</h4>
                         <p><strong>Strong responses demonstrate:</strong></p>
                         <ul>
-                            <li><strong>Conceptual understanding:</strong> Can articulate Level 1 vs Level 2 distinction</li>
-                            <li><strong>Personal connection:</strong> Relates concepts to their own experience with creative project</li>
-                            <li><strong>Feedback loop recognition:</strong> Sees how editorial and writing skills reinforce each other</li>
-                            <li><strong>Future application:</strong> Identifies specific skills they want to develop</li>
+                            <li>Can articulate Level 1 vs Level 2 distinction</li>
+                            <li>Relates concepts to their creative project experience</li>
+                            <li>Sees how editorial and writing skills reinforce each other</li>
+                            <li>Identifies specific skills they want to develop</li>
                         </ul>
-                        
-                        <p><strong>Example of strong response:</strong></p>
-                        <p><em>"Before today I thought writing skills didn't matter if AI could write for me. Now I see that knowing how writing works helps me direct AI better. Like when I told Alia to make a scene more tense by using shorter sentences and internal monologue—I learned that from studying writing. And now when I write my own scenes, I can use that same technique. It's like the skills build on each other. I want to get better at recognizing pacing issues because I struggle with that both in my own writing and when directing AI."</em></p>
-                    </div>
-                    
-                    <h3>Assessment for Planning Tomorrow's Lab</h3>
-                    
-                    <div class="objectives-list">
-                        <h4>Based on today's discussion, note:</h4>
-                        <ul>
-                            <li>Which students grasp editorial judgment concept strongly? (They'll be good peer mentors tomorrow)</li>
-                            <li>Which students still seem skeptical? (May need extra support recognizing quality differences tomorrow)</li>
-                            <li>What misconceptions emerged? (Address these explicitly in tomorrow's lab introduction)</li>
-                            <li>What examples resonated most? (Reference these when introducing tomorrow's activity)</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- CONNECTIONS SECTION -->
-                <section id="connections" class="section">
-                    <h2>🔗 Connections & Looking Ahead</h2>
-                    
-                    <h3>Connections to Other Lessons</h3>
-                    
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Lesson</th>
-                                <th>How 3.4 Connects</th>
-                                <th>What to Reference</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>3.3: Context and Clarity</strong></td>
-                                <td>Yesterday students discovered personal expertise enables judgment; today they understand why that matters</td>
-                                <td>"Remember yesterday when we talked about how your expertise helps you recognize generic vs. specific output? Today we explored why that recognition matters—it's what lets you improve things."</td>
-                            </tr>
-                            <tr>
-                                <td><strong>3.5: Recognizing Good Output (Tomorrow)</strong></td>
-                                <td>Students will practice the editorial judgment skills we discussed today</td>
-                                <td>"Tomorrow you'll practice what we talked about today: evaluating multiple AI responses and identifying exactly what makes one better than another. You'll be using Level 2 thinking."</td>
-                            </tr>
-                            <tr>
-                                <td><strong>3.6: Creative Project Day</strong></td>
-                                <td>Students will apply editorial judgment to their own stories</td>
-                                <td>"In two days, you'll use these editorial skills on your creative project—directing AI and seeing how the feedback loop works in practice."</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <h3>Real-World Applications to Highlight</h3>
-                    
-                    <div class="objectives-list">
-                        <p>If opportunities arise in discussion, connect to:</p>
-                        <ul>
-                            <li><strong>Content creation:</strong> Social media managers need editorial judgment even when using AI tools</li>
-                            <li><strong>Marketing:</strong> Campaign directors evaluate copywriters' work (whether human or AI-generated)</li>
-                            <li><strong>Management:</strong> Managers review reports, presentations, emails—editorial judgment is constant</li>
-                            <li><strong>Journalism:</strong> Editors work with writers to improve stories—same skills apply to working with AI</li>
-                            <li><strong>Any professional writing:</strong> Understanding writing helps you evaluate contractors, collaborators, AI tools</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- REFLECTION SECTION -->
-                <section id="reflection" class="section">
-                    <h2>🤔 Post-Lesson Teacher Reflection</h2>
-                    
-                    <div class="highlight-box">
-                        <h4>After Teaching This Lesson, Consider:</h4>
-                        
-                        <div class="objectives-list">
-                            <h4>Activity Effectiveness:</h4>
-                            <ul>
-                                <li>Did the 8 scenarios land? Which ones resonated most? Which fell flat?</li>
-                                <li>Did students grasp the Level 1 vs Level 2 distinction by the end of Think-Pair-Share?</li>
-                                <li>How did the Snowball activity go? Was the energy right? Did good questions emerge?</li>
-                                <li>Did any of my teacher snowball questions get discussed? Which ones?</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="objectives-list">
-                            <h4>Conceptual Understanding:</h4>
-                            <ul>
-                                <li>Did students understand that writing and editorial skills reinforce each other?</li>
-                                <li>Did the capstone insight about the feedback loop land?</li>
-                                <li>What resistance or skepticism remained? From which students?</li>
-                                <li>What misconceptions do I need to address in tomorrow's lab?</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="objectives-list">
-                            <h4>Student Reactions:</h4>
-                            <ul>
-                                <li>Which students had "aha" moments? What triggered them?</li>
-                                <li>Which students still seem worried that writing doesn't matter?</li>
-                                <li>What examples or analogies worked best for THIS class?</li>
-                                <li>Were there any student insights I should highlight tomorrow?</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="objectives-list">
-                            <h4>For Tomorrow (3.5 - Recognizing Good Output):</h4>
-                            <ul>
-                                <li>Which students will need extra scaffolding for editorial judgment practice?</li>
-                                <li>What examples from today should I reference when introducing tomorrow's lab?</li>
-                                <li>Should I adjust tomorrow's groupings based on today's discussions?</li>
-                                <li>What aspects of "recognizing quality" need explicit teaching based on today?</li>
-                            </ul>
-                        </div>
                     </div>
                 </section>
                 
@@ -1027,22 +775,14 @@
     <button class="print-button" onclick="window.print()">🖨️ Print Guide</button>
     
     <script>
-        // Smooth scrolling for navigation buttons
-        document.querySelectorAll('.nav-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const href = this.getAttribute('onclick');
-                if (href && href.includes('#')) {
-                    e.preventDefault();
-                    const targetId = href.match(/#[\w-]+/)[0];
-                    const targetSection = document.querySelector(targetId);
-                    const scrollableContent = document.querySelector('.scrollable-content');
-                    if (targetSection && scrollableContent) {
-                        const offsetTop = targetSection.offsetTop - scrollableContent.offsetTop;
-                        scrollableContent.scrollTo({ top: offsetTop - 20, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
+        function scrollToSection(sectionId) {
+            const targetSection = document.getElementById(sectionId);
+            const scrollableContent = document.querySelector('.scrollable-content');
+            if (targetSection && scrollableContent) {
+                const offsetTop = targetSection.offsetTop - scrollableContent.offsetTop;
+                scrollableContent.scrollTo({ top: offsetTop - 20, behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
